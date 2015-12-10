@@ -188,7 +188,7 @@ foreach(template_file ${F90_TEMPLATE_FILES})
 	# command which depends on the templated file, and produces a .F90
 	# file which is added to the list of dependencies for the executable.
 	get_filename_component(base_filename ${template_file} NAME_WE)
-	set(target_filename ${CMAKE_BINARY_DIR}/templated/${base_filename}.F90)
+	set(target_filename ${PROJECT_BINARY_DIR}/templated/${base_filename}.F90)
 	set(TEMPLATE_TARGETS ${TEMPLATE_TARGETS} ${target_filename})
 
 	add_custom_command(
@@ -198,7 +198,7 @@ foreach(template_file ${F90_TEMPLATE_FILES})
 	)
 
 endforeach(template_file)
-file(MAKE_DIRECTORY ${CMAKE_BINARY_DIR}/templated)
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/templated)
 
 #######################################################################
 #                                                                     #
@@ -235,7 +235,7 @@ foreach(target ${TARGETS})
 
 	# Set the fortran modules directory for cleanliness, and to avoid collisions
 	# between targets
-	set_target_properties(${target} PROPERTIES Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules/${target})
+	set_target_properties(${target} PROPERTIES Fortran_MODULE_DIRECTORY ${PROJECT_BINARY_DIR}/modules/${target})
 
 	# Ensure that we use the Fortran compiler for linking
 	set_target_properties(${target} PROPERTIES LINKER_LANGUAGE Fortran)
