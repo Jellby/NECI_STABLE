@@ -87,9 +87,6 @@ contains
         type(CommI), intent(in), optional :: Node
         character(*), parameter :: t_r = 'MPIBcast_character'
         integer(MPIArg) :: length
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -124,10 +121,7 @@ contains
 
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: ierr, comm
-        integer(int64) :: v, ret
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
+        integer :: v, ret
 
 #ifdef PARALLEL
 
@@ -158,9 +152,6 @@ contains
 
         integer(MPIArg) :: ierr, comm, rt
         logical(int32), target :: v
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -193,9 +184,6 @@ contains
         integer(MPIArg) :: ierr, comm, rt, nrt
         character(*), parameter :: t_r = 'MPIBCastLogical_logic'
         logical(int32), target :: v
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -234,9 +222,6 @@ contains
 
         integer(MPIArg) :: ierr, comm, rt, length
         logical(int32), target :: v(size(param_inout))
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -271,9 +256,6 @@ contains
         integer(MPIArg) :: ierr, comm, rt, nrt, length
         character(*), parameter :: t_r = 'MPIBCastLogical'
         logical(int32), target :: v(size(param_inout))
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -312,9 +294,6 @@ contains
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, rt, length
         character(*), parameter :: t_r = 'MPIAllGatherLogical'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
         integer :: v, ret(lbound(param_out, 1):ubound(param_out, 1)), j
 

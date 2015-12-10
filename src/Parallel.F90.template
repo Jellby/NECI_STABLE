@@ -356,9 +356,6 @@ contains
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, rt, ierr
         character(*), parameter :: t_r = "MPIReduce"
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
            
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -396,9 +393,6 @@ contains
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) ::  comm, rt, ierr
         character(*), parameter :: t_r = 'MPIReduce'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -486,9 +480,6 @@ contains
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, ierr
         character(*), parameter :: t_r = 'MPIAllReduce'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -533,9 +524,6 @@ contains
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: comm, ierr
         character(*), parameter :: t_r = 'MPIAllReduce'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -624,9 +612,6 @@ contains
         type(CommI), intent(in),optional :: Node
         integer(MPIArg) :: ierr, comm
         character(*), parameter :: t_r = 'MPIAllReduce'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -771,9 +756,6 @@ contains
         integer, intent(in) :: iLen, rt
         integer(MPIArg) :: ierr
         character(*), parameter :: t_r = 'MPIBcast'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -809,9 +791,6 @@ contains
         integer(MPIArg) :: ierr, comm, rt
         type(CommI), intent(in), optional :: Node
         character(*), parameter :: t_r = 'MPIBcast'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
         
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -847,9 +826,6 @@ contains
         integer(MPIArg) :: ierr, comm, rt
         type(CommI), intent(in), optional :: Node
         character(*), parameter :: t_r = 'MPIBcast'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -887,9 +863,6 @@ contains
         integer(MPIArg) :: ierr, comm, rt, nrt
         type(CommI), intent(in), optional :: Node
         character(*), parameter :: t_r = 'MPIBCast'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -927,9 +900,6 @@ contains
         integer, intent(out) :: ierr
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: comm, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -968,9 +938,6 @@ contains
         %(type1)s, intent(inout), target :: Ret()
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: comm, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1011,9 +978,6 @@ contains
         %(type1)s, intent(inout), target :: Ret(:)
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: comm, rt, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1050,9 +1014,6 @@ contains
         integer, intent(out) :: ierr
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, rt, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1090,9 +1051,6 @@ contains
         integer, intent(out) :: ierr
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, rt, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1135,9 +1093,6 @@ contains
         integer(MPIArg) :: dispsN(ubound(Disps,1)-lbound(Disps,1)+1)
         integer(MPIArg) :: lengthsN(ubound(Lengths,1)-lbound(Lengths,1)+1)
         integer(MPIArg) :: LengthIn
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1185,9 +1140,6 @@ contains
         integer, intent(out) :: ierr
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, rt, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1223,9 +1175,6 @@ contains
         integer, intent(out) :: ierr
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, rt, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1272,9 +1221,6 @@ contains
         integer(MPIArg) :: dispsN(ubound(Disps,1)-lbound(Disps,1)+1)
         integer(MPIArg) :: lengthsN(ubound(Lengths,1)-lbound(Lengths,1)+1)
         integer(MPIArg) :: LengthIn
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1323,9 +1269,6 @@ contains
         integer, intent(out) :: ierr
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, rt, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1362,9 +1305,6 @@ contains
         integer, intent(out) :: ierr
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, rt, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1401,9 +1341,6 @@ contains
         integer, intent(out) :: ierr
         type(CommI), intent(in), optional :: Node
         integer(MPIArg) :: Comm, rt, err
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
 #ifdef CBINDMPI
@@ -1438,9 +1375,6 @@ contains
         %(type1)s, intent(out), target :: Ret()
         integer, intent(in) :: BuffSize, tag, source
         integer, intent(out) :: ierr
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
         integer(MPIArg) :: stat(MPI_STATUS_SIZE), err
@@ -1470,9 +1404,6 @@ contains
         %(type1)s, intent(in), target :: v()
         integer, intent(in) :: BuffSize, tag, dest
         integer, intent(out) :: ierr
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
         integer(MPIArg) :: err
@@ -1607,9 +1538,6 @@ contains
         character(len=8) MCPUs
         logical, save :: initialised=.false.
         character(*), parameter :: t_r = 'MPIInit'
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
 #ifdef PARALLEL
         if (.not.initialised) then

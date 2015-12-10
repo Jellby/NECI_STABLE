@@ -8,9 +8,6 @@ module ParallelHelper
    use iso_c_hack
    use timing_neci, only: timer, set_timer, halt_timer
     implicit none
-#ifdef _MOLCAS_MPP_
-#include "mpif.h"
-#endif
 
     type(timer), save :: Sync_Time
 
